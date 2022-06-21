@@ -1,7 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:formulas_ffi/formulas_ffi.dart';
 import 'package:smart_slide_rule/commons/widgets/drawer.dart';
+
+final Formulas = FormulasFfi();
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -20,7 +23,7 @@ class Settings extends StatelessWidget {
         ],
       ),
       drawer: appDrawer(),
-      body: Text("Coming soon!"),
+      body: Text(Formulas.add(1,1).toString()),
     );
   }
 }
