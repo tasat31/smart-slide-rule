@@ -38,6 +38,7 @@ dependencies:
 
   formulas_ffi:
     path: packages/formulas_ffi
+  dart_code_metrics: ^4.16.0
 
 dev_dependencies:
   flutter_test:
