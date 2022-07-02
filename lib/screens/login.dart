@@ -3,12 +3,16 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:smart_slide_rule/models/login.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var _LoginModel = Provider.of<LoginModel>(context);
+
     return Scaffold(
       body: Center(
         child: Container(
@@ -21,12 +25,22 @@ class Login extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline1,
               ),
               TextFormField(
+                onChanged: (text) {
+                  _LoginModel.setUserName(text);
+                },
                 decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  labelText: 'Username',
                   hintText: 'Username',
                 ),
               ),
               TextFormField(
+                onChanged: (text) {
+                  _LoginModel.setPassword(text);
+                },
                 decoration: const InputDecoration(
+                  icon: Icon(Icons.security),
+                  labelText: 'Password',
                   hintText: 'Password',
                 ),
                 obscureText: true,
@@ -39,9 +53,9 @@ class Login extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.yellow,
+                  primary: Colors.green,
                 ),
-                child: const Text('ENTER'),
+                child: const Text('Sign In'),
               )
             ],
           ),

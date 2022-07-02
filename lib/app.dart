@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 // commons
 import 'package:smart_slide_rule/commons/themes/default.dart';
 //models
+import 'package:smart_slide_rule/models/login.dart';
 import 'package:smart_slide_rule/models/cart.dart';
 import 'package:smart_slide_rule/models/catalog.dart';
 
@@ -30,10 +31,14 @@ class ProviderApp extends StatelessWidget {
       providers: [
         // In this sample app, CatalogModel never changes, so a simple Provider
         // is sufficient.
+        Provider(create: (context) => LoginModel()),
         Provider(create: (context) => CatalogModel()),
         // CartModel is implemented as a ChangeNotifier, which calls for the use
         // of ChangeNotifierProvider. Moreover, CartModel depends
         // on CatalogModel, so a ProxyProvider is needed.
+        ChangeNotifierProvider<LoginModel>(
+          create: (context) => LoginModel(),
+        ),
         ChangeNotifierProxyProvider<CatalogModel, CartModel>(
           create: (context) => CartModel(),
           update: (context, catalog, cart) {

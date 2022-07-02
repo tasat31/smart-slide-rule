@@ -41,6 +41,7 @@ dependencies:
   dart_code_metrics: ^4.16.0
 
 dev_dependencies:
+  mockito: ^5.2.0
   flutter_test:
     sdk: flutter
 
