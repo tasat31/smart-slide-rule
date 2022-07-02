@@ -24,7 +24,7 @@ const List MenuList = <Map>[
     'path': '/regression',
   },
   {
-    'title': '簡易ML',
+    'title': '機械学習',
     'path': '/easy-ml',
   },
 ];
