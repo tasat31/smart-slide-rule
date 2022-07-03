@@ -55,9 +55,20 @@ dependencies:
 
 ## analyze -> codemetrics -> test
 
+```
 $ flutter analyze
 $ flutter pub run dart_code_metrics:metrics analyze lib
 $ flutter test
+```
+
+## Build and Release
+
+- Android App
+https://docs.flutter.dev/deployment/android
+
+- iOS App
+https://docs.flutter.dev/deployment/ios
+
 
 ## reference
 https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-21-rust-on-android.html
