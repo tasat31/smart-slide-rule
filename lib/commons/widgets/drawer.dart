@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class appDrawer extends StatelessWidget {
+class AppDrawer extends StatelessWidget {
   // Add a ListView to the drawer. This ensures the user can scroll
   // through the options in the drawer if there isn't enough vertical
   // space to fit everything.
@@ -13,9 +13,12 @@ class appDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.green,
             ),
-            child: Text('あなたの技術をポケットに'),
+            child: Text(
+              'あなたの技術をポケットに',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
           ListTile(
             title: const Text('物性表'),

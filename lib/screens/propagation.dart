@@ -10,8 +10,8 @@ class Propagation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('マルチメディア', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.white,
+        title: Text('電波伝搬', style: Theme.of(context).textTheme.headline1),
+        backgroundColor: Colors.green,
         actions: [
           IconButton(
             icon: const Icon(Icons.home),
@@ -19,7 +19,7 @@ class Propagation extends StatelessWidget {
           ),
         ],
       ),
-      drawer: appDrawer(),
+      drawer: AppDrawer(),
       body: Text("Coming soon!"),
     );
   }

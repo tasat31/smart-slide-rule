@@ -12,7 +12,6 @@ class Strength extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _StrengthModel = Provider.of<StrengthModel>(context);
-    String dropdownValue = '片持ち(集中)';
 
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +24,7 @@ class Strength extends StatelessWidget {
           ),
         ],
       ),
-      drawer: appDrawer(),
+      drawer: AppDrawer(),
       body: ListView(
           children: [
             Text(

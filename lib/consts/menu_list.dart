@@ -8,12 +8,12 @@ const List MenuList = <Map>[
     'path': '/strength',
   },
   {
-    'title': 'マルチメディア',
-    'path': '/multi-media',
-  },
-  {
     'title': '電波伝搬',
     'path': '/propagation',
+  },
+  {
+    'title': 'マルチメディア',
+    'path': '/multi-media',
   },
   {
     'title': 'ポンプ排水量',

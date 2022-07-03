@@ -14,10 +14,10 @@ class Cart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green,
       ),
       body: Container(
-        color: Colors.yellow,
+        color: Colors.white,
         child: Column(
           children: [
             Expanded(

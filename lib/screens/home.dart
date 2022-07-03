@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Menu', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      drawer: appDrawer(),
+      drawer: AppDrawer(),
       body: GridView.count(
         crossAxisCount: 2,
         children: MenuList.map((menu) {
@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
             child: Center(
               child: Text(
                 menu['title'],
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headline1,
               ),
             )
           );

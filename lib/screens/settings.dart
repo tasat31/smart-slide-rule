@@ -14,7 +14,7 @@ class Settings extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('このアプリの設定', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green,
         actions: [
           IconButton(
             icon: const Icon(Icons.home),
@@ -22,7 +22,7 @@ class Settings extends StatelessWidget {
           ),
         ],
       ),
-      drawer: appDrawer(),
+      drawer: AppDrawer(),
       body: Text(Formulas.add(1,1).toString()),
     );
   }
