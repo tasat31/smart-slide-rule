@@ -7,6 +7,7 @@ import 'package:smart_slide_rule/commons/themes/default.dart';
 import 'package:smart_slide_rule/models/login.dart';
 import 'package:smart_slide_rule/models/cart.dart';
 import 'package:smart_slide_rule/models/catalog.dart';
+import 'package:smart_slide_rule/models/strength.dart';
 
 // screens
 import 'package:smart_slide_rule/screens/login.dart';
@@ -33,6 +34,7 @@ class ProviderApp extends StatelessWidget {
         // is sufficient.
         Provider(create: (context) => LoginModel()),
         Provider(create: (context) => CatalogModel()),
+        Provider(create: (context) => StrengthModel()),
         // CartModel is implemented as a ChangeNotifier, which calls for the use
         // of ChangeNotifierProvider. Moreover, CartModel depends
         // on CatalogModel, so a ProxyProvider is needed.
@@ -46,6 +48,9 @@ class ProviderApp extends StatelessWidget {
             cart.catalog = catalog;
             return cart;
           },
+        ),
+        ChangeNotifierProvider<StrengthModel>(
+          create: (context) => StrengthModel(),
         ),
       ],
       child: MaterialApp(
