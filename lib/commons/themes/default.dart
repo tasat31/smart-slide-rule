@@ -13,5 +13,11 @@ final appTheme = ThemeData(
       fontSize: 24,
       color: Colors.black,
     ),
+    headline6: TextStyle(
+      fontFamily: 'Corben',
+      fontWeight: FontWeight.w700,
+      fontSize: 18,
+      color: Colors.black,
+    ),
   ),
 );

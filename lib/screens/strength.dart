@@ -17,7 +17,7 @@ class Strength extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('強度計算', style: Theme.of(context).textTheme.headline1),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green,
         actions: [
           IconButton(
             icon: const Icon(Icons.home),
@@ -26,31 +26,34 @@ class Strength extends StatelessWidget {
         ],
       ),
       drawer: appDrawer(),
-      body: Container(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+      body: ListView(
           children: [
             Text(
               'たわみ計算',
               style: Theme.of(context).textTheme.headline1,
+              textAlign: TextAlign.center,
             ),
-            DropdownButton<String>(
-              value: _StrengthModel.calcModel,
-              onChanged: (String? newText) {
-                _StrengthModel.setCalcModel(newText!);
-              },
-              items: _StrengthModel.itemsOfCalcModel
-                .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                );
-              }).toList(),
+            Container(
+              alignment: Alignment.center,
+              child: DropdownButton<String>(
+                value: _StrengthModel.calcModel,
+                style: Theme.of(context).textTheme.headline6,
+                onChanged: (String? newText) {
+                  _StrengthModel.setCalcModel(newText!);
+                },
+                items: _StrengthModel.itemsOfCalcModel
+                  .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                  );
+                }).toList(),
+              ),
             ),
             Text(
               '基準板厚(mm): ' + _StrengthModel.refThick.round().toString(),
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
             // reference thickness
             Slider(
@@ -65,7 +68,8 @@ class Strength extends StatelessWidget {
             ),
             Text(
               '部材の長さ(m): ' + _StrengthModel.beamLength.round().toString(),
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
             // beam length
             Slider(
@@ -81,7 +85,8 @@ class Strength extends StatelessWidget {
             ),
             Text(
               '部材のヤング率(GPa):' + _StrengthModel.modulusYoung.round().toString(),
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
             // modulus Young
             Slider(
@@ -97,7 +102,8 @@ class Strength extends StatelessWidget {
             // moment of inertia of area m4
             Text(
               '断面２次モーメント(m4): ' + pow(10, _StrengthModel.inertiaOfArea).round().toString(),
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
             Slider(
               value: _StrengthModel.inertiaOfArea,
@@ -140,11 +146,12 @@ class Strength extends StatelessWidget {
             ),
             Text(
               '[参考部材]',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
+              textAlign: TextAlign.center,
             ),
             Text(
               'SS400 L 60x60x5, AL5052 L 60x60x10, SS400 C 100x50x4, ...',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
             ),
             ElevatedButton(
               onPressed: () {},
@@ -152,7 +159,6 @@ class Strength extends StatelessWidget {
             )
           ],
         ),
-      ),
     );
   }
 }
