@@ -8,8 +8,8 @@ const List MenuList = <Map>[
     'path': '/strength',
   },
   {
-    'title': '電波伝搬',
-    'path': '/propagation',
+    'title': 'リンクバジェット',
+    'path': '/link-budget',
   },
   {
     'title': 'マルチメディア',

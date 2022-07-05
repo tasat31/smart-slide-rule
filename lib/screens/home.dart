@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
             child: Center(
               child: Text(
                 menu['title'],
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.headline6,
               ),
             )
           );

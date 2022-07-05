@@ -8,6 +8,7 @@ import 'package:smart_slide_rule/models/login.dart';
 import 'package:smart_slide_rule/models/cart.dart';
 import 'package:smart_slide_rule/models/catalog.dart';
 import 'package:smart_slide_rule/models/strength.dart';
+import 'package:smart_slide_rule/models/link_budget.dart';
 
 // screens
 import 'package:smart_slide_rule/screens/login.dart';
@@ -17,7 +18,7 @@ import 'package:smart_slide_rule/screens/catalog.dart';
 import 'package:smart_slide_rule/screens/cart.dart';
 import 'package:smart_slide_rule/screens/strength.dart';
 import 'package:smart_slide_rule/screens/multi_media.dart';
-import 'package:smart_slide_rule/screens/propagation.dart';
+import 'package:smart_slide_rule/screens/link_budget.dart';
 import 'package:smart_slide_rule/screens/hydropump.dart';
 import 'package:smart_slide_rule/screens/regression.dart';
 import 'package:smart_slide_rule/screens/easy_ml.dart';
@@ -35,6 +36,7 @@ class ProviderApp extends StatelessWidget {
         Provider(create: (context) => LoginModel()),
         Provider(create: (context) => CatalogModel()),
         Provider(create: (context) => StrengthModel()),
+        Provider(create: (context) => LinkBudgetModel()),
         // CartModel is implemented as a ChangeNotifier, which calls for the use
         // of ChangeNotifierProvider. Moreover, CartModel depends
         // on CatalogModel, so a ProxyProvider is needed.
@@ -52,6 +54,9 @@ class ProviderApp extends StatelessWidget {
         ChangeNotifierProvider<StrengthModel>(
           create: (context) => StrengthModel(),
         ),
+        ChangeNotifierProvider<LinkBudgetModel>(
+          create: (context) => LinkBudgetModel(),
+        ),
       ],
       child: MaterialApp(
         title: 'Provider Demo',
@@ -65,7 +70,7 @@ class ProviderApp extends StatelessWidget {
           '/cart': (context) => const Cart(),
           '/strength': (context) => const Strength(),
           '/multi-media': (context) => const MultiMedia(),
-          '/propagation': (context) => const Propagation(),
+          '/link-budget': (context) => const LinkBudget(),
           '/hydropump': (context) => const Hydropump(),
           '/regression': (context) => const Regression(),
           '/easy-ml': (context) => const EasyML(),
